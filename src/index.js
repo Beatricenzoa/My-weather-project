@@ -32,7 +32,7 @@ function formatDate(date) {
     "Saturday",
   ];
   let currentDay = days[day];
-  return `${currentDay} ${hours}:${minutes} `;
+  return `${currentDay} ${hours}:${minutes}`;
 }
 let currentDateELement = document.querySelector("#current-date");
 let currentDate = new Date();
