@@ -1,9 +1,33 @@
+function showWeatherDetails(response) {
+  let description = document.querySelector("#description");
+  description.innerHTML = response.data.condition.description;
+
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = `${response.data.temperature.humidity}%`;
+
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = `${response.data.wind.speed}km/h`;
+
+  let temperatureElement = document.querySelector("#temperature");
+  let temperature = Math.round(response.data.temperature.current);
+  temperatureElement.innerHTML = `${temperature}℃`;
+
+  let icon = document.querySelector("#icon");
+  icon.innerHTML = `<img src="response.data.condition.icon-url" alt="response.data.condition.icon">`;
+
+  let cityElement = document.querySelector("#current-city");
+  cityElement.innerHTML = response.data.city;
+}
+
 function search(event) {
   event.preventDefault();
   let searchInputElement = document.querySelector("#search-input");
-  let cityElement = document.querySelector("#current-city");
   let city = searchInputElement.value;
-  cityElement.innerHTML = city;
+
+  let key = "0f8t20affd39ebb0d8d3f0o83cf0b40f";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}&units=metric`;
+
+  axios.get(apiUrl).then(showWeatherDetails);
 }
 
 let searchForm = document.querySelector("#search-form");
@@ -37,3 +61,4 @@ function formatDate(date) {
 let currentDateELement = document.querySelector("#current-date");
 let currentDate = new Date();
 currentDateELement.innerHTML = formatDate(currentDate);
+search("Nairobi");

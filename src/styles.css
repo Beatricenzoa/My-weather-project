@@ -1,9 +1,12 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+a {
+  color: #113f67;
+}
 .weather-app {
   border-radius: 10px;
-  background: #f9f7fe;
+  background: #e7eaf6;
   width: 600px;
   margin: 60px auto;
   padding: 30px;
@@ -15,7 +18,7 @@ header {
   border: none;
   padding: 20px 30px;
   border-radius: 5px;
-  background: white;
+  background: #f2f2f2;
   width: 80%;
   font-size: 15px;
 }
@@ -23,7 +26,7 @@ header {
   border: none;
   border-radius: 5px;
   padding: 20px 25px;
-  background: blueviolet;
+  background: #38598b;
   color: white;
   margin-left: 4px;
   font-size: 15px;
@@ -32,11 +35,15 @@ h1 {
   font-size: 34px;
   font-weight: 900;
   margin: 0;
+  color: #231c39;
 }
 h2 {
   font-size: 40px;
   font-weight: bold;
   margin-top: 0;
+}
+h2 #temperature {
+  color: #231c39;
 }
 .current-weather {
   display: flex;
@@ -52,7 +59,7 @@ h2 {
   opacity: 0.8;
 }
 strong {
-  color: deeppink;
+  color: #113f67;
 }
 footer {
   padding-top: 20px;
