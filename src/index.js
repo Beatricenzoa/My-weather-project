@@ -18,16 +18,18 @@ function showWeatherDetails(response) {
   let cityElement = document.querySelector("#current-city");
   cityElement.innerHTML = response.data.city;
 }
-
-function search(event) {
-  event.preventDefault();
-  let searchInputElement = document.querySelector("#search-input");
-  let city = searchInputElement.value;
-
+function searchCity(city) {
   let key = "0f8t20affd39ebb0d8d3f0o83cf0b40f";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}&units=metric`;
 
   axios.get(apiUrl).then(showWeatherDetails);
+}
+
+function search(event) {
+  event.preventDefault();
+  let searchInputElement = document.querySelector("#search-input");
+
+  searchCity(searchInputElement.value);
 }
 
 let searchForm = document.querySelector("#search-form");
@@ -61,4 +63,5 @@ function formatDate(date) {
 let currentDateELement = document.querySelector("#current-date");
 let currentDate = new Date();
 currentDateELement.innerHTML = formatDate(currentDate);
-search("Nairobi");
+
+searchCity("Nairobi");
