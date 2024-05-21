@@ -12,8 +12,8 @@ function showWeatherDetails(response) {
   let temperature = Math.round(response.data.temperature.current);
   temperatureElement.innerHTML = `${temperature}`;
 
-  let icon = document.querySelector("#icon");
-  icon.innerHTML = `<img src="${response.data.condition.icon_url}">`;
+  //let icon = document.querySelector("#icon");
+  //icon.innerHTML = `<img src="${response.data.condition.icon_url}">`;
 
   let cityElement = document.querySelector("#current-city");
   cityElement.innerHTML = response.data.city;
